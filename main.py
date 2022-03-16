@@ -1,4 +1,4 @@
-# Problem 007:
+# Problem 008:
 #     Largest Product in a Series
 #
 # Description:
