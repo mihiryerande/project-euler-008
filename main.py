@@ -32,6 +32,7 @@
 
 from functools import reduce
 import operator
+from typing import List, Tuple
 
 BIG_NUM_STR = ''.join([
     '73167176531330624919225119674426574742355349194934',
@@ -57,7 +58,7 @@ BIG_NUM_STR = ''.join([
 ])
 
 
-def main(n):
+def main(n: int) -> Tuple[List[int], int]:
     """
     Returns the largest product of `n` adjacent digits
       in the provided 1000-digit number.
@@ -66,7 +67,10 @@ def main(n):
         n (int): Natural number
 
     Returns:
-        Largest product of `n` adjacent digits in BIG_NUM
+        (Tuple[List[int], int]):
+            Tuple of ...
+              * List of `n` adjacent digits in BIG_NUM producing the largest product
+              * Product of those digits
 
     Raises:
         AssertError: if incorrect params are given
@@ -90,5 +94,6 @@ def main(n):
 if __name__ == '__main__':
     digits = int(input('Enter a natural number: '))
     factors, product = main(digits)
-    print('Largest product of {} adjacent digits:\n  {}\n  = {}'.format(
-        digits, ' × '.join(map(str, factors)), product))
+    print('Largest product of {} adjacent digits:'.format(digits))
+    print('  {}'.format(' × '.join(map(str, factors))))
+    print('  {}'.format(product))
